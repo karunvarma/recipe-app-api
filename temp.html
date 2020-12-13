@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+<title>Change user | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/nav_sidebar.css">
+  <script src="/static/admin/js/nav_sidebar.js" defer></script>
+
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+
+
+<script src="/admin/jsi18n/"></script>
+<script src="/static/admin/js/vendor/jquery/jquery.min.js"></script>
+<script src="/static/admin/js/calendar.js"></script>
+<script src="/static/admin/js/jquery.init.js"></script>
+<script src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+<script src="/static/admin/js/core.js"></script>
+<script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script src="/static/admin/js/actions.min.js"></script>
+<script src="/static/admin/js/urlify.js"></script>
+<script src="/static/admin/js/prepopulate.min.js"></script>
+<script src="/static/admin/js/vendor/xregexp/xregexp.min.js"></script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+
+<body class=" app-core model-user change-form"
+  data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+
+<h1 id="site-name"><a href="/admin/">Django administration</a></h1>
+
+        </div>
+
+
+        <div id="user-tools">
+
+                Welcome,
+                <strong>anvi@gmail.com</strong>.
+
+
+
+                    <a href="/">View site</a> /
+
+
+
+
+
+
+                <a href="/admin/password_change/">Change password</a> /
+
+                <a href="/admin/logout/">Log out</a>
+
+        </div>
+
+
+
+    </div>
+    <!-- END Header -->
+
+<div class="breadcrumbs">
+<a href="/admin/">Home</a>
+&rsaquo; <a href="/admin/core/">Core</a>
+&rsaquo; <a href="/admin/core/user/">Users</a>
+&rsaquo; karun@gmail.com
+</div>
+
+
+
+    <div class="main shifted" id="main">
+
+
+
+<button class="sticky toggle-nav-sidebar" id="toggle-nav-sidebar" aria-label="Toggle navigation"></button>
+<nav class="sticky" id="nav-sidebar">
+
+
+
+
+    <div class="app-auth module">
+      <table>
+        <caption>
+          <a href="/admin/auth/" class="section" title="Models in the Authentication and Authorization application">Authentication and A
+uthorization</a>
+        </caption>
+
+          <tr class="model-group">
+
+              <th scope="row"><a href="/admin/auth/group/">Groups</a></th>
+
+
+
+              <td><a href="/admin/auth/group/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+      </table>
+    </div>
+
+    <div class="app-core module current-app">
+      <table>
+        <caption>
+          <a href="/admin/core/" class="section" title="Models in the Core application">Core</a>
+        </caption>
+
+          <tr class="model-user current-model">
+
+              <th scope="row"><a href="/admin/core/user/" aria-current="page">Users</a></th>
+
+
+
+              <td><a href="/admin/core/user/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+      </table>
+    </div>
+
+
+
+</nav>
+
+
+
+      <div class="content">
+
+
+
+        <!-- Content -->
+        <div id="content" class="colM">
+
+          <h1>Change user</h1>
+          <div id="content-main">
+
+
+  <ul class="object-tools">
+
+
+
+<li>
+
+    <a href="/admin/core/user/2/history/" class="historylink">History</a>
+</li>
+
+
+
+
+  </ul>
+
+
+<form method="post" id="user_form" novalidate><input type="hidden" name="csrfmiddlewaretoken" value="CUEDJ8TLlgp3SWR1OFRHPLMsybfpJZFSQYd
+QYiX2d81i2SqGZtAo2aTdN6jSYqAh">
+<div>
+
+
+
+
+
+
+
+  <fieldset class="module aligned ">
+
+
+
+        <div class="form-row field-email">
+
+
+                <div>
+
+
+                        <label class="required" for="id_email">Email:</label>
+
+                            <input type="text" name="email" value="karun@gmail.com" class="vTextField" maxlength="255" required id="id_e
+mail">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-password">
+
+
+                <div>
+
+
+                        <label for="id_password">Password:</label>
+
+                            <div id="id_password">
+
+<strong>algorithm</strong>: pbkdf2_sha256
+
+<strong>iterations</strong>: 216000
+
+<strong>salt</strong>: 43yhde******
+
+<strong>hash</strong>: 8RK9WM**************************************
+
+</div>
+
+
+
+                        <div class="help">Raw passwords are not stored, so there is no way to see this user’s password, but you can chan
+ge the password using <a href="../password/">this form</a>.</div>
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Personal Info</h2>
+
+
+        <div class="form-row field-name">
+
+
+                <div>
+
+
+                        <label class="required" for="id_name">Name:</label>
+
+                            <input type="text" name="name" value="karun" class="vTextField" maxlength="255" required id="id_name">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Permissions</h2>
+
+
+        <div class="form-row field-is_active">
+
+
+                <div class="checkbox-row">
+
+
+                        <input type="checkbox" name="is_active" id="id_is_active" checked><label class="vCheckboxLabel" for="id_is_activ
+e">Is active</label>
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-is_staff">
+
+
+                <div class="checkbox-row">
+
+
+                        <input type="checkbox" name="is_staff" id="id_is_staff"><label class="vCheckboxLabel" for="id_is_staff">Is staff
+</label>
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-is_superuser">
+
+
+                <div class="checkbox-row">
+
+
+                        <input type="checkbox" name="is_superuser" id="id_is_superuser"><label class="vCheckboxLabel" for="id_is_superus
+er">Superuser status</label>
+
+
+                        <div class="help">Designates that this user has all permissions without explicitly assigning them.</div>
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Important dates</h2>
+
+
+        <div class="form-row field-last_login">
+
+
+                <div>
+
+
+                        <label for="id_last_login_0">Last login:</label>
+
+                            <p class="datetime">
+  Date: <input type="text" name="last_login_0" class="vDateField" size="10" id="id_last_login_0">
+
+<br>
+  Time: <input type="text" name="last_login_1" class="vTimeField" size="8" id="id_last_login_1">
+
+
+</p>
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+
+<input type="submit" value="Save" class="default" name="_save">
+
+
+    <p class="deletelink-box"><a href="/admin/core/user/2/delete/" class="deletelink">Delete</a></p>
+
+
+<input type="submit" value="Save and add another" name="_addanother">
+<input type="submit" value="Save and continue editing" name="_continue">
+
+
+</div>
+
+
+
+    <script id="django-admin-form-add-constants"
+            src="/static/admin/js/change_form.js"
+
+            async>
+    </script>
+
+
+
+
+<script id="django-admin-prepopulated-fields-constants"
+        src="/static/admin/js/prepopulate_init.js"
+        data-prepopulated-fields="[]">
+</script>
+
+
+</div>
+</form></div>
+
+
+          <br class="clear">
+        </div>
+        <!-- END Content -->
+        <div id="footer"></div>
+      </div>
+    </div>
+</div>
+<!-- END Container -->
+</body>
+</html>
+
+
+

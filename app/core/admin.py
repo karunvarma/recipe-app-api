@@ -14,13 +14,13 @@ class UserAdmin(BaseUserAdmin):
                     'fields': ('email', 'password')
                }),
         (_('Personal Info'), {
-                                'fields': ('name',)
+                     'fields': ('name',)
                              }),
         (_('Permissions'),  {
-                                'fields': ('is_active', 'is_staff', 'is_superuser')
+                     'fields': ('is_active', 'is_staff', 'is_superuser')
                             }),
         (_('Important dates'), {
-                                    'fields': ('last_login',)
+                      'fields': ('last_login',)
                                }))
 
     add_fieldsets = (

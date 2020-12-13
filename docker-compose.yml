@@ -1,5 +1,8 @@
 version: "3"
 
+# Default image name will be djangoapi-travisci-submodule_app
+#build 'docker-compose' build from this directory
+#run 'docker-compose run app sh'
 services:
   app:
     build:
@@ -7,6 +10,30 @@ services:
     ports:
     - "8000:8000"
     volumes:
-    - ./app:/app
+      #synchronize app directory
+      - ./app:/app
+      # map volumes only at production. permission errors in travis when mkdir is called.
+      # the local directory should be available before mapping. It should not be created from container
+      # see udemy Django Rest lec 27 response for recommended way
+      #- ../vol:/vol
+      #run server listening on all ip address on docker and map it to port 8000,
+      # which is inturn forwarded to port 8000 on host machine
     command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=app
+      - DB_USER=uname
+      - DB_PASS=password
+    depends_on:
+      - db
+  # database service
+  db:
+    image: postgres:10-alpine
+    environment:
+      - POSTGRES_DB=app
+      - POSTGRES_USER=uname
+      - POSTGRES_PASSWORD=password
+
